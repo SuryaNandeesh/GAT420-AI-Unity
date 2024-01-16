@@ -48,7 +48,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 0}
-  perception: {fileID: 8599695379757282729}
+  seekperception: {fileID: 0}
+  fleeperception: {fileID: 0}
+  flockperception: {fileID: 0}
+  obstacleperception: {fileID: 0}
 --- !u!114 &7645975241763085495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,6 +83,9 @@ MonoBehaviour:
   tagName: Agent01
   distance: 5
   maxAngle: 180
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1001 &5011784000390796200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -187,6 +193,9 @@ MonoBehaviour:
   tagName: 
   distance: 1
   maxAngle: 45
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!114 &4303360588104095541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,7 +209,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 0}
-  perception: {fileID: 8599695379757282729}
+  seekperception: {fileID: 0}
+  fleeperception: {fileID: 0}
+  flockperception: {fileID: 0}
+  obstacleperception: {fileID: 0}
 --- !u!4 &7949520520664921568 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3161298468613301832, guid: 252ba5fa5d8167e42af72cf97baa830e, type: 3}

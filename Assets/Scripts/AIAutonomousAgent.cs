@@ -8,6 +8,7 @@ public class AIAutonomousAgent : AIAgent
     public AIPerception seekperception = null;
     public AIPerception fleeperception = null;
     public AIPerception flockperception = null;
+    public AIPerception obstacleperception = null;
 
     private void Update()
     {
@@ -45,11 +46,26 @@ public class AIAutonomousAgent : AIAgent
             }
         }
 
+        //obstacle avoid
+        if(obstacleperception != null)
+        {
+            if (((AIRaycastPerception)obstacleperception).CheckDirection(Vector3.forward))
+            {
+                Vector3 open = Vector3.zero;
+                if (((AIRaycastPerception)obstacleperception).GetOpenDirection(ref open))
+                {
+                    movement.ApplyForce(GetSteeringForce(open) * 5); // *5 = the change of how much they want to avoid
+                }
+            }
+        }
+
+        //cancel y movement
+        Vector3 acceleration = movement.acceleration;
+        acceleration.y = 0;
+        movement.acceleration = acceleration;
+
         //wrap position in world
         transform.position = Utilities.Wrap(transform.position, new Vector3(-10, -10, -10), new Vector3(10, -10, -10));
-
-
-
     }
 
     private Vector3 Seek(GameObject target)
