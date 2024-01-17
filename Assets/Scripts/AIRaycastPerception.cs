@@ -62,6 +62,7 @@ public class AIRaycastPerception : AIPerception
     {
         // create ray in direction (use game object orientation)
         Ray ray = new Ray(transform.position, transform.rotation * direction);
+        Debug.DrawRay(ray.origin, ray.direction * distance, Color.red);
         // check ray cast
         return Physics.Raycast(ray, distance, layerMask);
 

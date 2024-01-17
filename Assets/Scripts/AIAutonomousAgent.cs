@@ -65,7 +65,7 @@ public class AIAutonomousAgent : AIAgent
         movement.acceleration = acceleration;
 
         //wrap position in world
-        transform.position = Utilities.Wrap(transform.position, new Vector3(-10, -10, -10), new Vector3(10, -10, -10));
+        transform.position = Utilities.Wrap(transform.position, new Vector3(-10, -10, -10), new Vector3(10, 10, 10));
     }
 
     private Vector3 Seek(GameObject target)
