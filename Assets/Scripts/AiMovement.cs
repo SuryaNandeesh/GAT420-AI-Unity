@@ -9,9 +9,9 @@ public abstract class AiMovement : MonoBehaviour
     [Range(1, 100)] public float maxForce = 5;
     [Range(1, 360)] public float turnRate = 90;
 
-    public virtual Vector3 velocity { get; set; } = Vector3.zero;
+    public virtual Vector3 Velocity { get; set; } = Vector3.zero;
     public virtual Vector3 acceleration { get; set; } = Vector3.zero;
-    public virtual Vector3 direction { get { return velocity.normalized; } }
+    public virtual Vector3 direction { get { return Velocity.normalized; } }
     public virtual Vector3 destination { get; set; } = Vector3.zero;
 
     public abstract void ApplyForce(Vector3 force);

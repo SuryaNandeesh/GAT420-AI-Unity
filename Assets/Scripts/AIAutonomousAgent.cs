@@ -121,7 +121,7 @@ public class AIAutonomousAgent : AIAgent
         Vector3 velocities = Vector3.zero;
         foreach(var neighbor in neighbors)
         {
-            velocities += neighbor.GetComponent<AIAgent>().movement.velocity;
+            velocities += neighbor.GetComponent<AIAgent>().movement.Velocity;
         }
         Vector3 averageVelocity = velocities / neighbors.Length;
 
@@ -133,7 +133,7 @@ public class AIAutonomousAgent : AIAgent
     private Vector3 GetSteeringForce(Vector3 direction)
     {
         Vector3 desired = direction.normalized * movement.maxSpeed;
-        Vector3 steer = desired - movement.velocity;
+        Vector3 steer = desired - movement.Velocity;
         Vector3 force = Vector3.ClampMagnitude(steer, movement.maxForce);
 
         return force;

@@ -65,7 +65,7 @@ public class AINavNode : MonoBehaviour
 	public static AINavNode GetRandomAINavNode()
 	{
 		var nodes = GetAINavNodes();
-		return (nodes == null) ? null : nodes[Random.Range(0, nodes.Length)];
+		return nodes?[Random.Range(0, nodes.Length)];
 	}
 
     #endregion
